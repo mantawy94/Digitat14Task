@@ -11,6 +11,7 @@ Store favorite list using shared preferences to save favorite events between lau
 It's Flutter application for displaying a list of events using api (Seat Geek API), user can open event page and can add event to favorite and store favorite events local if user open app again.
 
 1. The main screen display the list of events
-   
+   https://user-images.githubusercontent.com/36262265/180764684-98fda9c5-884d-4f34-bf6b-c712dd18f9db.png
 2. on click on event, it redirect to the details screen
 3. on click on the heart icon it will add or remove event to favorites list 
+   https://user-images.githubusercontent.com/36262265/180765537-88989134-ba77-4c67-be1f-2538366e630d.png
