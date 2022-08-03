@@ -59,43 +59,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                       width: MediaQuery.of(context).size.width-40,
                       margin: const EdgeInsets.all(10),
                       child: TextField(
-                        controller: eventSearchTextField,
-                        focusNode: _eventSearchFieldFocus,
-                        textAlignVertical: TextAlignVertical.top,
-                        onSubmitted: (value) {
-                          _eventSearchFieldFocus.unfocus();
-                        },
-                        onChanged: (value){
-                          print(value);
+                        style: AppTextStyles.bodyTextStyle(Colors.white),
+                        onChanged: (text) {
+                          print('First text field: $text');
                           setState(() {
                             _getOrdersList = EventsControl.getEventsListApi(
-                                searchText: value);
+                                searchText: text);
                           });
                         },
-                        textInputAction: TextInputAction.done,
-                        style: AppTextStyles.bodyTextStyle(Colors.white),
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-                        ],
-                        autocorrect: false,
                         decoration: InputDecoration(
                           label: Text("Search",
                             style: AppTextStyles.bodyTextStyle(Colors.white),
                           ),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(AppDesign.mainBorderRadius),
-                              borderSide: const BorderSide(
-                                width: 1, color: Colors.white,)),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(AppDesign.mainBorderRadius),
-                              borderSide: const BorderSide(
-                                  width: 2, color: Colors.white)),
                           prefixIcon: const Icon(Icons.search,color: Colors.white,),
                         ),
-                        keyboardType: TextInputType.text,
-                        textAlign: TextAlign.start,
                       ),
                     ),
                   ),
